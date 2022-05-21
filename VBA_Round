@@ -1,0 +1,8 @@
+Sub RoundNumber()
+        Set myRange = Application.Selection
+        Set myRange = Application.InputBox("Select one Range that you want to round up", "RoundNumber", myRange.Address, Type:=8)
+        dNum = Application.InputBox("Please type the number of decimal", "RoundNumber", Type:=1)
+        For Each myCell In myRange
+               myCell.Value = Application.WorksheetFunction.Round(myCell.Value, dNum)
+        Next
+End Sub
